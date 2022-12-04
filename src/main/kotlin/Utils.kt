@@ -16,3 +16,9 @@ inline fun <T> List<T>.splitOn(predicate: (T) -> Boolean): List<List<T>> {
 	result.add(current)
 	return result
 }
+
+fun <T> Collection<T>.intersect(vararg collections: Collection<T>): Set<T> {
+	val intersection = mutableSetOf<T>()
+	forEach { item -> if (collections.all { it.contains(item) }) intersection.add(item) }
+	return intersection
+}
