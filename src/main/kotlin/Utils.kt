@@ -22,3 +22,7 @@ fun <T> Collection<T>.intersect(vararg collections: Collection<T>): Set<T> {
 	forEach { item -> if (collections.all { it.contains(item) }) intersection.add(item) }
 	return intersection
 }
+
+fun IntRange.contains(other: IntRange) = first <= other.first && last >= other.last
+
+fun IntRange.overlaps(other: IntRange) = first <= other.last && last >= other.first
