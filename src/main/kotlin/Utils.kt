@@ -2,7 +2,7 @@ import kotlin.io.path.*
 
 fun readInputLines(name: String) = Path("input/$name.txt").readLines()
 
-fun checkEquals(value: Any, expected: Any) = check(value == expected) { "Expected $expected, got $value" }
+fun <T> checkEquals(value: T, expected: T) = check(value == expected) { "Expected $expected, got $value" }
 
 inline fun <T> List<T>.splitOn(predicate: (T) -> Boolean): List<List<T>> {
 	val result = mutableListOf<List<T>>()
