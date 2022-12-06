@@ -1,5 +1,6 @@
 import kotlin.io.path.*
 
+fun readInput(name: String) = Path("input/$name.txt").readText()
 fun readInputLines(name: String) = Path("input/$name.txt").readLines()
 
 fun <T> checkEquals(value: T, expected: T) = check(value == expected) { "Expected $expected, got $value" }
