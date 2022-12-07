@@ -1,10 +1,10 @@
 fun main() {
-	fun runGame(list: List<String>, guide: Map<Char, Map<Char, Int>>) = list.sumOf { line ->
+	fun runGame(lines: List<String>, guide: Map<Char, Map<Char, Int>>) = lines.sumOf { line ->
 		val (player1, player2) = line.split(" ").map { it.first() }
 		guide[player1]!![player2]!!
 	}
 	
-	val partOne = partOne@{ list: List<String> ->
+	val partOne = partOne@{ lines: List<String> ->
 		val guide = mapOf(
 			'A' to mapOf(
 				'X' to 4,
@@ -23,10 +23,10 @@ fun main() {
 			),
 		)
 		
-		runGame(list, guide)
+		runGame(lines, guide)
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
+	val partTwo = partTwo@{ lines: List<String> ->
 		val guide = mapOf(
 			'A' to mapOf(
 				'X' to 3,
@@ -45,7 +45,7 @@ fun main() {
 			),
 		)
 		
-		runGame(list, guide)
+		runGame(lines, guide)
 	}
 	
 	val testInput = readInputLines("day_2_test")

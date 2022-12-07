@@ -34,7 +34,7 @@ fun main() {
 		return baseDir
 	}
 	
-	val partOne = partOne@{ list: List<String> ->
+	val partOne = partOne@{ lines: List<String> ->
 		fun sumSizes(dir: Dir): Int {
 			var sum = 0
 			dir.children
@@ -46,12 +46,12 @@ fun main() {
 			return sum
 		}
 		
-		val baseDir = parseDirs(list)
+		val baseDir = parseDirs(lines)
 		sumSizes(baseDir)
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
-		val baseDir = parseDirs(list)
+	val partTwo = partTwo@{ lines: List<String> ->
+		val baseDir = parseDirs(lines)
 		val neededSize = baseDir.size - 40000000
 		var bestSizeFound = baseDir.size
 		

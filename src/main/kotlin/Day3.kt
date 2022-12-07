@@ -1,16 +1,16 @@
 fun main() {
 	fun priority(c: Char) = if (c.isLowerCase()) c.code - 'a'.code + 1 else c.code - 'A'.code + 27
 	
-	val partOne = partOne@{ list: List<String> ->
-		list.sumOf { rucksack ->
+	val partOne = partOne@{ lines: List<String> ->
+		lines.sumOf { rucksack ->
 			val (first, second) = rucksack.chunked(rucksack.length / 2)
 			val common = first.toSet().intersect(second.toSet()).first()
 			priority(common)
 		}
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
-		list
+	val partTwo = partTwo@{ lines: List<String> ->
+		lines
 			.chunked(3)
 			.sumOf { (first, second, third) ->
 				val common = first.toSet().intersect(second.toSet(), third.toSet()).first()

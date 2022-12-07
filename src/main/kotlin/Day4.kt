@@ -4,15 +4,15 @@ fun main() {
 		sections[0] .. sections[1]
 	}
 	
-	val partOne = partOne@{ list: List<String> ->
-		list.count { pair ->
+	val partOne = partOne@{ lines: List<String> ->
+		lines.count { pair ->
 			val (firstElf, secondElf) = pairSections(pair)
 			firstElf.contains(secondElf) || secondElf.contains(firstElf)
 		}
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
-		list.count { pair ->
+	val partTwo = partTwo@{ lines: List<String> ->
+		lines.count { pair ->
 			val (firstElf, secondElf) = pairSections(pair)
 			firstElf.overlaps(secondElf) || secondElf.overlaps(firstElf)
 		}

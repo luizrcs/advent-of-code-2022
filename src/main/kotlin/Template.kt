@@ -1,8 +1,8 @@
 fun main() {
-	val partOne = partOne@{ list: List<String> ->
+	val partOne = partOne@{ lines: List<String> ->
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
+	val partTwo = partTwo@{ lines: List<String> ->
 	}
 	
 	val testInput = readInputLines("day_x_test")

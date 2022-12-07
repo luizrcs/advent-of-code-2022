@@ -1,12 +1,12 @@
 fun main() {
-	val partOne = partOne@{ list: List<String> ->
-		list
+	val partOne = partOne@{ lines: List<String> ->
+		lines
 			.splitOn { it.isEmpty() }
 			.maxOf { calories -> calories.sumOf(String::toInt) }
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
-		list
+	val partTwo = partTwo@{ lines: List<String> ->
+		lines
 			.splitOn { it.isEmpty() }
 			.map { calories -> calories.sumOf(String::toInt) }
 			.sortedDescending()

@@ -13,10 +13,10 @@ fun main() {
 	
 	fun dequeTopsString(deques: List<Deque<Char>>) = String(deques.map { it.last() }.toCharArray())
 	
-	val partOne = partOne@{ list: List<String> ->
+	val partOne = partOne@{ lines: List<String> ->
 		val deques = mutableListOf<Deque<Char>>()
 		
-		list.forEach { line ->
+		lines.forEach { line ->
 			if (!line.startsWith("move")) parseCrates(line, deques)
 			else {
 				val (amount, from, to) = parseMove(line)
@@ -29,10 +29,10 @@ fun main() {
 		dequeTopsString(deques)
 	}
 	
-	val partTwo = partTwo@{ list: List<String> ->
+	val partTwo = partTwo@{ lines: List<String> ->
 		val deques = mutableListOf<Deque<Char>>()
 		
-		list.forEach { line ->
+		lines.forEach { line ->
 			if (!line.startsWith("move")) parseCrates(line, deques)
 			else {
 				val (amount, from, to) = parseMove(line)
