@@ -27,3 +27,9 @@ fun <T> Collection<T>.intersect(vararg collections: Collection<T>): Set<T> {
 fun IntRange.contains(other: IntRange) = first <= other.first && last >= other.last
 
 fun IntRange.overlaps(other: IntRange) = first <= other.last && last >= other.first
+
+fun IntArray.product(): Int {
+	var product = 1
+	for (element in this) product *= element
+	return product
+}
